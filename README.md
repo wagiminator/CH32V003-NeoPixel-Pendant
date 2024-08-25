@@ -24,6 +24,11 @@ These LEDs are energy-efficient, environmentally friendly, very bright, and have
 ## LIR2032 rechargeable Coin Cell Battery
 Do not use regular CR2032 3V batteries! They do not provide the necessary current to power all the LEDs.
 
+## Building Instructions
+1. Take the Gerber files (the *zip* file inside the *hardware* folder) and upload them to a PCB (printed circuit board) manufacturer of your choice (e.g., [JLCPCB](https://jlcpcb.com/)). They will use these files to create the circuit board for your device and send it to you.
+2. Once you have the PCB, you can start soldering the components onto it. Use the BOM (bill of materials) and schematic as a guide to make sure everything is connected correctly. You can find the corresponding files in the *hardware* folder.
+3. Upload the firmware by following the instructions in the next section (see below).
+
 ![NeoPendant_pic2.jpg](https://raw.githubusercontent.com/wagiminator/CH32V003-NeoPixel-Pendant/main/documentation/NeoPendant_pic2.jpg)
 
 # Software
@@ -134,11 +139,6 @@ pip install rvprog
 Remove the battery from the device. Connect the TinyBling via the 3-pin PROG header to the WCH-LinkE programming device. Open a terminal and navigate to the folder with the *makefile*. Run the following command to compile and upload:
 ```
 make flash
-```
-
-If you want to just upload the pre-compiled binary, run the following command instead:
-```
-rvprog -f bin/<firmware>.bin
 ```
 
 ### Other Operating Systems
