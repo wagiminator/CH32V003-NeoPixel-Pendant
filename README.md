@@ -91,6 +91,9 @@ You can find an appropriate library *(neo_sw.c)* that works with all pins and at
 ### neo_demo
 The device shows various decorative light animations using the TinyBling's NeoPixels. It automatically switches between the various animations after a defined time interval. However, if the button is held down during power-up, the switching occurs with each button press.
 
+## neo_hunt
+In this simple one-button game, a hunter (represented by a green LED) chases a deer (represented by a red LED). The player must press the button at the exact moment when the hunter catches up to the deer. If the button is pressed too early or too late, the game is lost. After each successful catch, the hunter’s speed increases, making the game progressively more challenging as the player tries to maintain perfect timing. The objective is to see how many times the player can successfully catch the deer before missing.
+
 ### neo_wof
 A simple wheel of fortune on the TinyBling. Press the button and look forward to the result!
 
@@ -109,7 +112,7 @@ sudo udevadm control --reload-rules
 
 On Windows, if you need to you can install the WinUSB driver over the WCH interface 1 using the [Zadig](https://zadig.akeo.ie/) tool.
 
-To upload the firmware, you need to ensure that the battery is removed. Then, you should make the following connections to the WCH-LinkE:
+To upload the firmware, you need to ensure that the battery is removed. Then, you should make the following connections to the WCH-LinkE (you can use a pogo pin clip for this):
 
 ```
 WCH-LinkE      TinyBling
@@ -136,7 +139,7 @@ sudo apt install python3 python3-pip
 pip install rvprog
 ```
 
-Remove the battery from the device. Connect the TinyBling via the 3-pin PROG header to the WCH-LinkE programming device. Open a terminal and navigate to the folder with the *makefile*. Run the following command to compile and upload:
+Remove the battery from the device. Connect the TinyBling via the 3-pin PROG header to the WCH-LinkE programming device (you can use a pogo pin clip for this). Open a terminal and navigate to the folder with the *makefile*. Run the following command to compile and upload:
 ```
 make flash
 ```
@@ -147,7 +150,7 @@ Follow the instructions on [CNLohr's ch32v003fun page](https://github.com/cnlohr
 ## Compiling and Uploading Firmware using PlatformIO
 - Install [PlatformIO](https://platformio.org) and [platform-ch32v](https://github.com/Community-PIO-CH32V/platform-ch32v). Follow [these instructions](https://pio-ch32v.readthedocs.io/en/latest/installation.html) to do so. Linux/Mac users may also need to install [pyenv](https://realpython.com/intro-to-pyenv).
 - Click on "Open Project" and select the firmware folder with the *platformio.ini* file.
-- Remove the battery from the TinyBling. Connect the WCH-LinkE to the board, then click "Upload".
+- Remove the battery from the TinyBling. Connect the WCH-LinkE to the board (you can use a pogo pin clip for this), then click "Upload".
 
 ## Uploading pre-compiled Firmware Binary
 WCH offers the free but closed-source software [WCH-LinkUtility](https://www.wch.cn/downloads/WCH-LinkUtility_ZIP.html) to upload the precompiled hex-file with Windows. Select the "WCH-LinkRV" mode in the software, open the *.hex* file in the *bin* folder and upload it to the microcontroller.
