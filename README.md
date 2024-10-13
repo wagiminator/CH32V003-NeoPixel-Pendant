@@ -91,7 +91,7 @@ You can find an appropriate library *(neo_sw.c)* that works with all pins and at
 ### neo_demo
 The device shows various decorative light animations using the TinyBling's NeoPixels. It automatically switches between the various animations after a defined time interval. However, if the button is held down during power-up, the switching occurs with each button press.
 
-## neo_hunt
+### neo_hunt
 In this simple one-button game, a hunter (represented by a green LED) chases a deer (represented by a red LED). The player must press the button at the exact moment when the hunter catches up to the deer. If the button is pressed too early or too late, the game is lost. After each successful catch, the hunter’s speed increases, making the game progressively more challenging as the player tries to maintain perfect timing. The objective is to see how many times the player can successfully catch the deer before missing.
 
 ### neo_wof
